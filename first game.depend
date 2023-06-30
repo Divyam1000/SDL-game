@@ -1,9 +1,11 @@
 # depslib dependency file v1.0
-1688062094 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\main.cpp
+1688117342 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\main.cpp
 	"../include/game.hpp"
 
-1688044157 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\game.hpp
+1688111107 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\game.hpp
 	"SDL.h"
+	"SDL_image.h"
+	"player.hpp"
 	<iostream>
 
 1682695035 c:\mingwsdl2\i686-w64-mingw32\include\sdl2\sdl.h
@@ -395,7 +397,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1688062260 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\game.cpp
+1688117147 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\game.cpp
 	"../include/game.hpp"
 
 1682695035 c:\users\asus-pc\desktop\sdl_trials\second\first game\mingwsdl2\i686-w64-mingw32\include\sdl2\sdl.h
@@ -786,4 +788,17 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1675730664 c:\users\asus-pc\desktop\sdl_trials\second\first game\mingwsdl2\sdl image\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1688116837 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\player.hpp
+	"SDL.h"
+	"SDL_image.h"
+
+1688117007 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\player.cpp
+	"player.hpp"
 

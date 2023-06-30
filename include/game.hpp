@@ -2,6 +2,8 @@
 #define GAME_HPP
 
 #include "SDL.h"
+#include "SDL_image.h"
+#include "player.hpp"
 #include <iostream>
 
 class game
@@ -25,6 +27,7 @@ class game
         bool isRunning;
         SDL_Window *Window;
         SDL_Renderer *Renderer;
+        player Player;
 };
 
 #endif // GAME_HPP

@@ -1,7 +1,8 @@
-#include "../include/game.hpp"
-
 const int Screen_Width = 640;
 const int Screen_Height = 480;
+
+#include "../include/game.hpp"
+
 game *Game = nullptr;
 
 int main(int arg, char *argv[])

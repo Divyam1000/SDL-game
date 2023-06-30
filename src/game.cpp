@@ -27,7 +27,7 @@ void game :: Init(const char* title, int xpos, int ypos, int width, int height, 
     }
     else
     {
-        std::cout << "SDL initialised" <<std::endl;
+        std::cout << "SDL initialised!" <<std::endl;
 
         Window = SDL_CreateWindow(title, xpos, ypos, width, height,flags);
 
@@ -44,13 +44,22 @@ void game :: Init(const char* title, int xpos, int ypos, int width, int height, 
         Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED );
         if(Renderer == NULL)
         {
-            std :: cout << "Renderer not created" << std :: endl;
+            std :: cout << "Renderer not created!" << std :: endl;
         }
         else
         {
-            std :: cout << "Renderer created" << std :: endl;
+            std :: cout << "Renderer created!" << std :: endl;
 
             SDL_SetRenderDrawColor(Renderer, 255, 255, 255 ,255);
+        }
+
+        if(Player.Player_InitTexture(Renderer) == !1)
+        {
+            std :: cout<< "Player Texture not created!" <<std :: endl;
+        }
+        else
+        {
+            std :: cout<< "Player Texture created!" <<std :: endl;
         }
 
         isRunning = true;
@@ -82,6 +91,7 @@ void game :: Render()
 {
     SDL_RenderClear(Renderer);
 
+    Player.Player_Render(Renderer);
 
     SDL_RenderPresent(Renderer);
 }

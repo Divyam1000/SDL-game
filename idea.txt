@@ -1,0 +1,6 @@
+we have a player, which is shaped like a ball and we need to shoot him in a goal like structure.
+
+we have 5 levels
+
+the playeer needs to be draged with a mouse and then shoot in that direction just like in 8 ball pool.
+
