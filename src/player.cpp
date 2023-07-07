@@ -2,10 +2,16 @@
 
 player::player()
 {
-    dstR.h = 64;
-    dstR.w = 64;
+    srcR.x = 0;
+    srcR.y = 0;
+    srcR.h = 32;
+    srcR.w = 32;
+
     dstR.x = 0;
     dstR.y = 0;
+    dstR.h = 32;
+    dstR.w = 32;
+
 }
 
 player::~player()
@@ -13,22 +19,31 @@ player::~player()
     //dtor
 }
 
-SDL_Texture* player :: PlayerTexture()
+SDL_Texture* player :: Init_PlayerTexture(SDL_Texture* Tex)
 {
-    return PlayerTex;
-
-}
-
-int player :: Player_InitTexture(SDL_Renderer *Renderer)
-{
-    SDL_Surface* TempSurface=IMG_Load("C:/Users/Asus-PC/Desktop/SDL_trials/second/first game/assets/player.png");
-    PlayerTex = SDL_CreateTextureFromSurface(Renderer, TempSurface);
-    SDL_FreeSurface(TempSurface);
-    return 1;
+    PlayerTex = Tex;
+    return PlayerTex;  // simply for a value (not very important)
 }
 
 int player :: Player_Render(SDL_Renderer *Renderer)
 {
     SDL_RenderCopy(Renderer, PlayerTex, NULL, &dstR);
+
     return 1;
+}
+
+int player :: Player_Update(int x, int y)
+{
+    xpos = x;
+    ypos = y;
+
+    dstR.x = xpos;
+    dstR.y = ypos;
+    dstR.h = 32;
+    dstR.w = 32;
+
+
+    //xpos ++;
+    //ypos ++;
+
 }

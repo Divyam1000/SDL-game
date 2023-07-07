@@ -1,5 +1,7 @@
 #include "../include/game.hpp"
 
+int count = 0, xpos = 0, ypos = 0;
+
 game::game()
 {
 
@@ -53,13 +55,14 @@ void game :: Init(const char* title, int xpos, int ypos, int width, int height, 
             SDL_SetRenderDrawColor(Renderer, 255, 255, 255 ,255);
         }
 
-        if(Player.Player_InitTexture(Renderer) == !1)
+
+        if((Player.Init_PlayerTexture(texture_manager :: LoadTexture("C:/Users/Asus-PC/Desktop/SDL_trials/second/first game/assets/player.png", Renderer))) != 0)    //   load texture returns a texture which is saved in Player variables PlayerTexture
         {
-            std :: cout<< "Player Texture not created!" <<std :: endl;
+            std :: cout<< "Player Texture created!" <<std :: endl;
         }
         else
         {
-            std :: cout<< "Player Texture created!" <<std :: endl;
+            std :: cout<< "Player Texture not created!" <<std :: endl;
         }
 
         isRunning = true;
@@ -85,6 +88,11 @@ void game :: HandleEvents()
 }
 void game :: Update()
 {
+    count++;
+    std :: cout << count << std :: endl;
+    Player.Player_Update(xpos, ypos);
+    xpos++;
+    ypos++;
 
 }
 void game :: Render()

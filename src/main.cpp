@@ -5,6 +5,13 @@ const int Screen_Height = 480;
 
 game *Game = nullptr;
 
+int FPS = 60;
+int FrameDelay = 1000/FPS;
+
+int FrameStart;
+int FrameTime;
+
+
 int main(int arg, char *argv[])
 {
     Game = new game();
@@ -13,9 +20,19 @@ int main(int arg, char *argv[])
 
     while (Game->Running())
     {
+        FrameStart = SDL_GetTicks();
+
         Game->HandleEvents();
         Game->Update();
         Game->Render();
+
+        FrameTime = SDL_GetTicks()- FrameStart;
+
+        if(FrameDelay > FrameTime)
+        {
+            SDL_Delay(FrameDelay - FrameTime);
+
+        }
     }
 
     Game->Clean();

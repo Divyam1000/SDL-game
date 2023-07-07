@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1688117342 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\main.cpp
+1688318065 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\main.cpp
 	"../include/game.hpp"
 
-1688111107 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\game.hpp
+1688743920 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\game.hpp
 	"SDL.h"
 	"SDL_image.h"
 	"player.hpp"
+	"../include/texture_manager.hpp"
 	<iostream>
 
 1682695035 c:\mingwsdl2\i686-w64-mingw32\include\sdl2\sdl.h
@@ -397,7 +398,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1688117147 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\game.cpp
+1688746721 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\game.cpp
 	"../include/game.hpp"
 
 1682695035 c:\users\asus-pc\desktop\sdl_trials\second\first game\mingwsdl2\i686-w64-mingw32\include\sdl2\sdl.h
@@ -795,10 +796,18 @@
 	"begin_code.h"
 	"close_code.h"
 
-1688116837 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\player.hpp
+1688746808 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\player.hpp
+	"SDL.h"
+	"SDL_image.h"
+	"texture_manager.hpp"
+
+1688746808 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\player.cpp
+	"player.hpp"
+
+1688321928 c:\users\asus-pc\desktop\sdl_trials\second\first game\include\texture_manager.hpp
 	"SDL.h"
 	"SDL_image.h"
 
-1688117007 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\player.cpp
-	"player.hpp"
+1688350997 source:c:\users\asus-pc\desktop\sdl_trials\second\first game\src\texture_manager.cpp
+	"texture_manager.hpp"
 

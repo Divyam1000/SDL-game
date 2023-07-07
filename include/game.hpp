@@ -4,7 +4,10 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #include "player.hpp"
+#include "../include/texture_manager.hpp"
+
 #include <iostream>
+
 
 class game
 {
