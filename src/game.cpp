@@ -1,6 +1,16 @@
 #include "../include/game.hpp"
 
+#include "player.hpp"
+#include "../include/texture_manager.hpp"
+#include "map.hpp"
+
+
 int count = 0, xpos = 0, ypos = 0;
+
+SDL_Renderer* game :: Renderer = nullptr;
+
+player Player;
+map* Map;
 
 game::game()
 {
@@ -44,7 +54,7 @@ void game :: Init(const char* title, int xpos, int ypos, int width, int height, 
         }
 
         Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED );
-        if(Renderer == NULL)
+        if(game :: Renderer == NULL)
         {
             std :: cout << "Renderer not created!" << std :: endl;
         }
@@ -52,11 +62,11 @@ void game :: Init(const char* title, int xpos, int ypos, int width, int height, 
         {
             std :: cout << "Renderer created!" << std :: endl;
 
-            SDL_SetRenderDrawColor(Renderer, 255, 255, 255 ,255);
+            SDL_SetRenderDrawColor(game :: Renderer, 255, 255, 255 ,255);
         }
 
 
-        if((Player.Init_PlayerTexture(texture_manager :: LoadTexture("C:/Users/Asus-PC/Desktop/SDL_trials/second/first game/assets/player.png", Renderer))) != 0)    //   load texture returns a texture which is saved in Player variables PlayerTexture
+        if((Player.Init_PlayerTexture(texture_manager :: LoadTexture("C:/Users/Asus-PC/Desktop/SDL_trials/second/first game/assets/player.png"))) != 0)    //   load texture returns a texture which is saved in Player variables PlayerTexture
         {
             std :: cout<< "Player Texture created!" <<std :: endl;
         }
@@ -64,6 +74,8 @@ void game :: Init(const char* title, int xpos, int ypos, int width, int height, 
         {
             std :: cout<< "Player Texture not created!" <<std :: endl;
         }
+
+        Map = new map();
 
         isRunning = true;
     }
@@ -99,7 +111,9 @@ void game :: Render()
 {
     SDL_RenderClear(Renderer);
 
-    Player.Player_Render(Renderer);
+    Map->DrawMap();
+
+    Player.Player_Render();
 
     SDL_RenderPresent(Renderer);
 }

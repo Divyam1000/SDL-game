@@ -25,9 +25,9 @@ SDL_Texture* player :: Init_PlayerTexture(SDL_Texture* Tex)
     return PlayerTex;  // simply for a value (not very important)
 }
 
-int player :: Player_Render(SDL_Renderer *Renderer)
+int player :: Player_Render()
 {
-    SDL_RenderCopy(Renderer, PlayerTex, NULL, &dstR);
+    SDL_RenderCopy(game :: Renderer, PlayerTex, NULL, &dstR);
 
     return 1;
 }

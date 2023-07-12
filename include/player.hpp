@@ -3,7 +3,9 @@
 
 #include "SDL.h"
 #include "SDL_image.h"
+#include "game.hpp"
 #include "texture_manager.hpp"
+
 
 class player
 {
@@ -12,7 +14,7 @@ class player
         virtual ~player();
 
         SDL_Texture* Init_PlayerTexture(SDL_Texture* Tex);
-        int Player_Render(SDL_Renderer *Renderer);
+        int Player_Render();
         int Player_Update(int x, int y);
 
 

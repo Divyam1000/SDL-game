@@ -44,10 +44,12 @@
 			<Add directory="mingwSDL2/SDL Image/lib" />
 		</Linker>
 		<Unit filename="include/game.hpp" />
+		<Unit filename="include/map.hpp" />
 		<Unit filename="include/player.hpp" />
 		<Unit filename="include/texture_manager.hpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/map.cpp" />
 		<Unit filename="src/player.cpp" />
 		<Unit filename="src/texture_manager.cpp" />
 		<Extensions>
